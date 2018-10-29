@@ -1,0 +1,18 @@
+# clone repository
+git clone git@github.com:marcinnowakowski/mars_rovers_new_relic.git
+
+# install sdkman
+curl -s "https://get.sdkman.io" | bash
+source "/home/mnowakowski/.sdkman/bin/sdkman-init.sh"
+
+# install gradle
+sdk install gradle 4.10.2
+
+# init project with kotlin dsl in gradle
+gradle init --dsl kotlin
+
+# install git extras
+sudo apt install git-extras
+
+# add gradle specific files to git ignore
+
