@@ -1,19 +1,24 @@
-com.websigni.mars.plane
+package com.websigni.mars.plane;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import com.websigni.mars.rover.Rover;
 
 public class Plane {
     
     final public int x;
     final public int y;
 
-    final public List<Rower> rowers = new ArrayList<>();
+    final public List<Rover> rovers = new ArrayList<>();
 
     public Plane(int aX, int aY) {
         x = aX;
         y = aY;
     }
 
-    public Plane addRower(Rower rower) {
-        rowers.add(rower);
+    public Plane addRover(Rover rover) {
+        rovers.add(rover);
         return this;
     }
 

@@ -1,4 +1,4 @@
-package com.websigni.mars.rower;
+package com.websigni.mars.rover;
 
 public enum Direction {
     NORTH,

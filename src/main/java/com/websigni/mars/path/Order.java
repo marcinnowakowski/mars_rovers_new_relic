@@ -1,10 +1,10 @@
-com.websigni.mars.path
+package com.websigni.mars.path;
 
-public class RowerOrder {
+public class Order {
     
-    public RowerOrderType rowerOrderType;
+    public OrderType orderType;
 
-    public RowerOrder(RowerOrderType rot) {
-        rowerOrderType = rot;
+    public Order(OrderType aOrderType) {
+        orderType = aOrderType;
     }
 }
