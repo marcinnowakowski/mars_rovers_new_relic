@@ -15,4 +15,8 @@ gradle init --dsl kotlin
 sudo apt install git-extras
 
 # add gradle specific files to git ignore
+git ignore "gradle"
+git ignore ".gradle"
+
+# create develop branch
 
