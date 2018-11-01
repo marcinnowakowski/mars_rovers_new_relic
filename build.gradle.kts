@@ -1,5 +1,6 @@
 plugins {
     application
+    java
 }
 
 application {
@@ -9,6 +10,10 @@ application {
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.getByName<Test>("test"){
+    testLogging.showStandardStreams = true
 }
 
 dependencies {

@@ -15,6 +15,10 @@ public class MissionOne {
     @Test
     public void sendTwoRoversToMars(){
 
+        System.out.println("==========================================");
+        System.out.println("--> MISSION ONE -->");
+        System.out.println("==========================================");
+
         // define plane surface
         Plane p = new Plane(5, 5);
 

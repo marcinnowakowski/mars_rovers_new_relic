@@ -6,6 +6,8 @@ import com.websigni.mars.plane.Plane;
 import com.websigni.mars.path.OrderType;
 import com.websigni.mars.path.Path;
 
+import static com.websigni.mars.config.ApplicationConfig.DEBUG;
+
 public class Rover {
     
     public final Position position;
@@ -35,6 +37,11 @@ public class Rover {
      */
     public Rover launch(Plane plane) {
         
+        if(DEBUG) {
+            System.out.println("------------------------------------------");
+            System.out.println("ROVER: " + position.x + " " + position.y + " " + position.direction);
+        }
+
         // if path is empty rover doesn't move
         if(!oPath.isPresent()) {
             return new Rover(position.x, position.y, position.direction);
@@ -52,6 +59,5 @@ public class Rover {
         );
 
     }
-
     
 }

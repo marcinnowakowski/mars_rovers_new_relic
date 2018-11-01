@@ -19,4 +19,8 @@ git ignore "gradle"
 git ignore ".gradle"
 
 # create develop branch
+git checkout -b develop
+
+# run single test with gradle with info logging level
+gradle test -i --tests com.websigni.mars.MissionOne.sendTwoRoversToMars
 
