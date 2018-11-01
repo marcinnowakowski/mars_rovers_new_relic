@@ -13,6 +13,7 @@ java {
 
 dependencies {
     testCompile("junit:junit:4.12")
+    testCompile("org.assertj:assertj-core:3.11.1")
 }
 
 repositories {

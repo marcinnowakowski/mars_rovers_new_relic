@@ -1,6 +1,7 @@
 package com.websigni.mars;
 
 import org.junit.Test;
+import static org.assertj.core.api.Assertions.*;
 
 import com.websigni.mars.plane.Plane;
 import com.websigni.mars.rover.Rover;
@@ -48,7 +49,17 @@ public class MissionOne {
             )
         );
 
-        p.launch();
+        Plane missionResult = p.launch();
+        Rover r1 = missionResult.rovers.get(0);
+        Rover r2 = missionResult.rovers.get(1);
+
+        assertThat(r1.position.x).isEqualTo(1);
+        assertThat(r1.position.x).isEqualTo(3);
+        assertThat(r1.position.direction).isEqualTo(Direction.NORTH);
+
+        assertThat(r1.position.x).isEqualTo(5);
+        assertThat(r1.position.x).isEqualTo(1);
+        assertThat(r1.position.direction).isEqualTo(Direction.EAST);
 
     }
     

@@ -2,9 +2,9 @@ package com.websigni.mars.path;
 
 public class Order {
     
-    public OrderType orderType;
+    public OrderType ot;
 
-    public Order(OrderType aOrderType) {
-        orderType = aOrderType;
+    public Order(OrderType aot) {
+        ot = aot;
     }
 }

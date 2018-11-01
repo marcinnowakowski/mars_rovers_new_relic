@@ -22,7 +22,25 @@ public class Plane {
         return this;
     }
 
-    public void launch() {
-        throw new UnsupportedOperationException();
+    public Plane launch() {
+        
+        return rovers.stream()
+            .reduce(new Plane(x, y), 
+                Plane::addRover,
+                (p1, p2) -> p1.rovers.addAll(p2.rovers)
+            );
+    }
+
+    public isInRange(Position p) {
+        
+        if(position.x < 0 || position.x > x) {
+            throw new IndexOutOfBoundsException(
+                "Rover out of range (" + x + ", " + y + "): position.x = " + position.x);
+        }
+
+        if(position.y < 0 || position.y > y) {
+            throw new IndexOutOfBoundsException(
+                "Rover out of range (" + x + ", " + y + "): position.y = " + position.y);
+        }
     }
 }

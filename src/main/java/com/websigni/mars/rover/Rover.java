@@ -1,24 +1,52 @@
 package com.websigni.mars.rover;
 
+import java.util.Optional;
+
+import com.websigni.mars.plane.Plane;
+import com.websigni.mars.path.OrderType;
 import com.websigni.mars.path.Path;
 
 public class Rover {
-
-    final public int x;
-    final public int y;
-    final public Direction direction;
     
-    private Path path;
+    public final Position position;
 
-    public Rover(int aX, int aY, Direction aDirection) {
-        x = aX;
-        y = aY;
-        direction = aDirection;
+    private Optional<Path> oPath = Optional.empty();
+
+    public Rover(int x, int y, Direction d) {
+        
+        position = new Position(x, y, d);
     }
 
-    public Rover setPath(Path aPath) {
-        path = aPath;
+    public Rover(Position p) {
+        
+        position = p;
+    }
+
+    public Rover setPath(Path path) {
+        oPath = Optional.of(path);
         return this;
+    }
+
+    /**
+     * Find new rover possition on basis of path defined by order sequence.
+     * 
+     * @param plane
+     * @return
+     */
+    public Rover launch(Plane plane) {
+        
+        // if path is empty rover doesn't move
+        if(!oPath.isPresent()) {
+            return Rover(x, y, direction);
+        }
+
+        return new Rover(path.orders.stream()
+            .reduce(position, 
+                (position, order) ->
+                    plane.isInRange(position.perform(order))
+            )
+        );
+
     }
 
     
