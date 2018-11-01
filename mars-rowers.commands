@@ -24,3 +24,9 @@ git checkout -b develop
 # run single test with gradle with info logging level
 gradle test -i --tests com.websigni.mars.MissionOne.sendTwoRoversToMars
 
+# tag older commit
+git tag -a v0.1 25c423f -m "Workspace prepared."
+
+# push tags
+git push --tags origin develop
+
