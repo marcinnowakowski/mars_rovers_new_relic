@@ -1,5 +1,9 @@
 package com.websigni.mars.rover;
 
+import com.websigni.mars.path.Order;
+import static com.websigni.mars.path.OrderType.LEFT;
+import static com.websigni.mars.path.OrderType.RIGHT;
+
 public class Position {
 
     final public int x;
@@ -12,13 +16,13 @@ public class Position {
         direction = d;
     }
 
-    private Position perform(Order o) {
+    public Position perform(Order o) {
 
         switch(o.ot) {
-            case OrderType.LEFT:
-                return new Position(this.x, this.y, this.direction.left);
-            case OrderType.RIGHT:
-                return new Position(this.x, this.y, this.direction.left);
+            case LEFT:
+                return new Position(this.x, this.y, this.direction.left());
+            case RIGHT:
+                return new Position(this.x, this.y, this.direction.right());
             default:
                 return move();
         }

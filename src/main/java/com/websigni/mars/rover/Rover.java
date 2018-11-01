@@ -37,13 +37,17 @@ public class Rover {
         
         // if path is empty rover doesn't move
         if(!oPath.isPresent()) {
-            return Rover(x, y, direction);
+            return new Rover(position.x, position.y, position.direction);
         }
 
-        return new Rover(path.orders.stream()
+        return new Rover(oPath.get().orders.stream()
             .reduce(position, 
                 (position, order) ->
-                    plane.isInRange(position.perform(order))
+                    plane.isInRange(position.perform(order)),
+                // this reduction cannot be parallelized
+                (p1, p2) -> {
+                    throw new UnsupportedOperationException();
+                }
             )
         );
 

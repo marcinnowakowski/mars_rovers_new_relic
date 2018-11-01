@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import com.websigni.mars.rover.Rover;
+import com.websigni.mars.rover.Position;
 
 public class Plane {
     
@@ -27,12 +28,17 @@ public class Plane {
         return rovers.stream()
             .reduce(new Plane(x, y), 
                 Plane::addRover,
-                (p1, p2) -> p1.rovers.addAll(p2.rovers)
+                (p1, p2) -> {
+                    p1.rovers.addAll(p2.rovers);
+                    return p1;
+                }
             );
     }
 
-    public isInRange(Position p) {
+    public Position isInRange(Position position) {
         
+        System.out.println(position.x + " " + position.y + " " + position.direction);
+
         if(position.x < 0 || position.x > x) {
             throw new IndexOutOfBoundsException(
                 "Rover out of range (" + x + ", " + y + "): position.x = " + position.x);
@@ -42,5 +48,7 @@ public class Plane {
             throw new IndexOutOfBoundsException(
                 "Rover out of range (" + x + ", " + y + "): position.y = " + position.y);
         }
+
+        return position;
     }
 }

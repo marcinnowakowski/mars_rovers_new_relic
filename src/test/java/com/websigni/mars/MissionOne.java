@@ -54,12 +54,12 @@ public class MissionOne {
         Rover r2 = missionResult.rovers.get(1);
 
         assertThat(r1.position.x).isEqualTo(1);
-        assertThat(r1.position.x).isEqualTo(3);
+        assertThat(r1.position.y).isEqualTo(3);
         assertThat(r1.position.direction).isEqualTo(Direction.NORTH);
 
-        assertThat(r1.position.x).isEqualTo(5);
-        assertThat(r1.position.x).isEqualTo(1);
-        assertThat(r1.position.direction).isEqualTo(Direction.EAST);
+        assertThat(r2.position.x).isEqualTo(5);
+        assertThat(r2.position.y).isEqualTo(1);
+        assertThat(r2.position.direction).isEqualTo(Direction.EAST);
 
     }
     

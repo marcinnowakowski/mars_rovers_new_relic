@@ -12,41 +12,44 @@ public class DirectionTest {
 
         assertThat(
             Direction.NORTH
-                .countLeft()
-                .countLeft()
-                .countLeft()
-                .countLeft()
+                .left()
+                .left()
+                .left()
+                .left()
         ).isEqualTo(Direction.NORTH);
     }
 
+    @Test
     public void check360Clockwise(){
         assertThat(
             Direction.NORTH
-                .countRight()
-                .countRight()
-                .countRight()
-                .countRight()
+                .right()
+                .right()
+                .right()
+                .right()
         ).isEqualTo(Direction.NORTH);
     }
 
+    @Test
     public void check90Clockwise(){
     
         assertThat(
             Direction.NORTH
-                .countRight()
+                .right()
         ).isEqualTo(Direction.EAST);
     }
 
+    @Test
     public void check270ClockwiseAnticlockwise(){
     
         assertThat(
             Direction.NORTH
-                .countRight()
-                .countRight()
-                .countRight()
-                .countLeft()
-                .countLeft()
-                .countLeft()
+                .right()
+                .right()
+                .right()
+                .left()
+                .left()
+                .left()
         ).isEqualTo(Direction.NORTH);
     }
 }
