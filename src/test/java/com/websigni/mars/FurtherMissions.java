@@ -16,11 +16,11 @@ public class FurtherMissions {
         );
     }
 
-    private mission(String input, String expectedOutput) {
+    private void mission(String input, String expectedOutput) {
 
         String output = MissionParser.parse(input).printToString();
 
-        assertThat(r2.position.direction).isEqualTo(Direction.EAST);
+        assertThat(output).isEqualTo(expectedOutput);
     }
     
 }

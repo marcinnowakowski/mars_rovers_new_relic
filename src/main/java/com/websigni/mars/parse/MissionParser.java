@@ -17,13 +17,13 @@ public class MissionParser {
             "( [L,R,M]+)?" +
         ")*";
 
-    public Plane parse(String input) {
+    public static Plane parse(String input) {
         
         verifyExpression(input);
         return PlaneParser.parse(input);
     }
 
-    private void verifyExpression(String input) {
+    private static void verifyExpression(String input) {
         
         if(DEBUG) {
             System.out.println("REGEXP = " + REGEXP);

@@ -1,5 +1,8 @@
 package com.websigni.mars.path;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 import com.websigni.mars.path.Path;
 
 public class PathParser {
@@ -12,7 +15,7 @@ public class PathParser {
 
         Path p = new Path();
 
-        Matcher m = PATH_PATTERN.matcher(text);
+        Matcher m = PATH_PATTERN.matcher(input);
 
         while(m.find()) {
             Order o = new Order(
@@ -22,10 +25,10 @@ public class PathParser {
             p.addOrder(o);
         }
 
-        return Path();
+        return p;
     }
 
-    public static parseOrderType(String input) {
+    public static OrderType parseOrderType(String input) {
 
         switch(input) {
             case "L":

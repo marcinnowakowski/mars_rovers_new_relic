@@ -1,14 +1,15 @@
 package com.websigni.mars.rover;
 
 import java.util.List;
+import java.util.ArrayList;
+
+import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 import com.websigni.mars.rover.Direction;
 import com.websigni.mars.rover.Rover;
 
 import com.websigni.mars.path.PathParser;
-
-import java.util.ArrayList;
 
 public class RoverParser {
     
@@ -23,7 +24,7 @@ public class RoverParser {
         if(input.equals(""))
             return rovers;
 
-        Matcher m = ROVER_PATTERN.matcher(text);
+        Matcher m = ROVER_PATTERN.matcher(input);
 
         while(m.find()) {
             Rover r = new Rover(

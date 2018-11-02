@@ -3,6 +3,8 @@ package com.websigni.mars.plane;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+import com.websigni.mars.rover.RoverParser;
+
 public class PlaneParser {
 
     private static final Pattern PLANE_PATTERN = Pattern.compile(
@@ -20,7 +22,7 @@ public class PlaneParser {
         );
 
         RoverParser.parse(input.substring(m.end())).stream()
-            .foreach(
+            .forEach(
                 r -> p.addRover(r) 
             );
 
