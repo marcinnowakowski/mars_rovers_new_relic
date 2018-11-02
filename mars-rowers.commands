@@ -21,9 +21,10 @@ git ignore ".gradle"
 # create develop branch
 git checkout -b develop
 
-# run single test with gradle with info logging level
-gradle test -i --tests com.websigni.mars.MissionOne.sendTwoRoversToMars
-gradle test -i --tests com.websigni.mars.parse.MissionParserTest.parseMissionOne
+# run single test with gradle
+gradle test --tests com.websigni.mars.MissionOne.sendTwoRoversToMars
+gradle test --tests com.websigni.mars.parse.MissionParserTest.parseMissionOne
+gradle test --tests com.websigni.mars.FurtherMissions.missionOne
 
 # tag older commit
 git tag -a v0.1 25c423f -m "Workspace prepared."

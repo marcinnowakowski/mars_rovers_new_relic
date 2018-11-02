@@ -59,5 +59,16 @@ public class Rover {
         );
 
     }
+
+    public void printToString(StringBuilder sb) {
+        
+        sb.append(" ");
+        sb.append(position.x);
+        sb.append(" ");
+        sb.append(position.y);
+        sb.append(" ");
+        sb.append(position.direction.printToString());
+
+    }
     
 }

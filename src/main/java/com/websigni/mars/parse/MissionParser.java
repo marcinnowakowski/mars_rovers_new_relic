@@ -4,6 +4,7 @@ import static com.websigni.mars.config.ApplicationConfig.DEBUG;
 
 import com.websigni.mars.parse.MissionFormatException;
 import com.websigni.mars.plane.Plane;
+import com.websigni.mars.plane.PlaneParser;
 
 public class MissionParser {
 
@@ -19,8 +20,7 @@ public class MissionParser {
     public Plane parse(String input) {
         
         verifyExpression(input);
-        //return Plane.parse(input);
-        return new Plane(1, 1);
+        return PlaneParser.parse(input);
     }
 
     private void verifyExpression(String input) {

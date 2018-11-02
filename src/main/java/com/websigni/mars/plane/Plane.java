@@ -58,4 +58,17 @@ public class Plane {
 
         return position;
     }
+
+    public String printToString() {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(x);
+        sb.append(" ");
+        sb.append(y);
+        
+        rovers.stream()
+            .forEach(r -> r.printToString(sb));
+
+        return sb.toString();
+    }
 }

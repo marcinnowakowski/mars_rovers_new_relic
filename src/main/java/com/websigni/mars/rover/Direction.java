@@ -41,4 +41,18 @@ public enum Direction {
                 return NORTH;
         }
     }
+
+    public String printToString() {
+        switch(this) {
+            case NORTH:
+                return "N";
+            case EAST:
+                return "E";
+            case SOUGHT:
+                return "S";
+            default:
+                // WEST
+                return "W";
+        }
+    }
 }
