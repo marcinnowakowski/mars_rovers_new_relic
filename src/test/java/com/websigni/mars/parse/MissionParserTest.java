@@ -35,7 +35,7 @@ public class MissionParserTest {
         assertThat(p.rovers.size()).isEqualTo(0);
     }
 
-    @Test
+    @Test(expected = MissionFormatException.class)
     public void parseErrorousInput() {
         Plane p = new MissionParser().parse(
             "5 5 1 2 N 'THIS IS WRONG!' 3 3 E MMRMMRMRRM"

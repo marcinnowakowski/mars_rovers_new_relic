@@ -62,12 +62,16 @@ public class Plane {
     public String printToString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append(x);
-        sb.append(" ");
-        sb.append(y);
         
+        final boolean first[] = new boolean[]{true};
         rovers.stream()
-            .forEach(r -> r.printToString(sb));
+            .forEach(r -> {
+                if(first[0])
+                    first[0] = false;
+                else
+                    sb.append(" ");
+                r.printToString(sb);
+            });
 
         return sb.toString();
     }

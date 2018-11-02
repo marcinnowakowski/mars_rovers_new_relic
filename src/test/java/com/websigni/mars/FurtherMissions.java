@@ -18,7 +18,7 @@ public class FurtherMissions {
 
     private void mission(String input, String expectedOutput) {
 
-        String output = MissionParser.parse(input).printToString();
+        String output = MissionParser.parse(input).launch().printToString();
 
         assertThat(output).isEqualTo(expectedOutput);
     }

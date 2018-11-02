@@ -8,7 +8,7 @@ import com.websigni.mars.rover.RoverParser;
 public class PlaneParser {
 
     private static final Pattern PLANE_PATTERN = Pattern.compile(
-        "(//d+) (//+d)"
+        "(\\d+) (\\d+)"
     );
 
     public static Plane parse(String input) {

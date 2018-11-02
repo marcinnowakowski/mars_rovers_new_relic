@@ -33,7 +33,7 @@ public class RoverParser {
                 parseDirection(m.group(3))
             );
 
-            if(m.groupCount() == 5)
+            if(m.group(4) != null)
                 r.setPath(PathParser.parse(m.group(4)));
             
             rovers.add(r);
