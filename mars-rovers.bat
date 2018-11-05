@@ -1,2 +1,1 @@
-#!/bin/bash
 java -jar build/libs/mars-rovers.jar

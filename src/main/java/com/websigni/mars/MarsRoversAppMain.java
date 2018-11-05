@@ -3,7 +3,9 @@ package com.websigni.mars;
 import static com.websigni.mars.config.ApplicationConfig.DEBUG;
 import static com.websigni.mars.config.ApplicationConfig.PORT_NUMBER;
 
-public class MarsRoverAppMain {
+import com.websigni.mars.server.TcpServer;
+
+public class MarsRoversAppMain {
 
     public static void main(String[] args) {
         

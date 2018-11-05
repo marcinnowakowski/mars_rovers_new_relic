@@ -4,12 +4,19 @@ plugins {
 }
 
 application {
-    mainClassName = "samples.HelloWorld"
+    mainClassName = "com.websigni.mars.MarsRoversAppMain"
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.named<Jar>("jar") {
+    manifest.attributes(mapOf(
+        "Implementation-Title" to "Mars Rovers Challenge",
+        "Main-Class" to "com.websigni.mars.MarsRoversAppMain"
+    ))
 }
 
 tasks.getByName<Test>("test"){
