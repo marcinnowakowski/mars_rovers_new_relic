@@ -18,3 +18,34 @@ OUTPUT: The output for each rover should be its final coordinates and heading.
 INPUT AND OUTPUT
 Test Input: 5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM
 Expected Output: 1 3 N 5 1 E
+
+SOLUTION:
+com.websigni.mars.FurtherMissions.java provides solution for the "Mars Rover" problem.
+
+================================================
+
+OPTIONAL EXTENSION EXERCISE
+Using the implementation of your solution to "Mars Rover" problem as a base,
+implement a mechanism whereby your solution can be used remotely. How this is
+implemented is up to you, as long as you stick to the requirement to use only JDK libraries.
+You may wish to choose to implement your own client or to use an existing widely available
+client such as telnet, curl or a web browser for interacting with your solution. Please include a
+brief description detailing the usage of this remote interface.
+Please email us your completed solution within one week. If you need more time or have
+questions, let us know. We wish you luck and look forward to receiving your response.
+
+SOLUTION:
+com.websigni.mars.MarsRoverAppMain.java provides solution for the "Mars Rover" remote problem.
+
+Install:
+./gradlew install
+
+Usage:
+./mars-rovers(.bat)
+
+Client:
+telnet localhost 4567
+\> 5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM
+1 3 N 5 1 E
+\> Ctrl + ]
+
